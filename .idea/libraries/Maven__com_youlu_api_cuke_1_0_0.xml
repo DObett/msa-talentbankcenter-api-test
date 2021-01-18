@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.youlu.api:cuke:1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../soft/apache-maven-3.6.1/cucumber/com/youlu/api/cuke/1.0.0/cuke-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../soft/apache-maven-3.6.1/cucumber/com/youlu/api/cuke/1.0.0/cuke-1.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../soft/apache-maven-3.6.1/cucumber/com/youlu/api/cuke/1.0.0/cuke-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
