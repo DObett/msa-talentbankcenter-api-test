@@ -24,3 +24,27 @@ Feature: 收入确认-IR (IR00009)
     Examples:
       | JsonResult  |   value |
       |  result     | 000000 |
+
+
+  Scenario Outline: 优路企业确认列表 (IR00009)
+    Given API "/api/ir/org/item/view/list"
+    And Param
+	 """
+    pageIndex: "0"
+    pageSize: "10"
+    orderNo:
+    orgName:
+    itemdtlAimdatestart:
+    itemdtlAimdateend:
+    projectId:
+    schoolId: sdsd
+    orderType: sdsd
+	 """
+    When GET
+    Then STATUS "200"
+
+    Then JSONPATH_ASSERT "<JsonResult>" equals "<value>"
+
+    Examples:
+      | JsonResult  |   value |
+      |  result     | 000000 |

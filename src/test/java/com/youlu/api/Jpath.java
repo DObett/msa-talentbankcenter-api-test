@@ -15,8 +15,11 @@ public class Jpath {
         print("--------------------------------------getJsonValue--------------------------------------");
         Object document = Configuration.defaultConfiguration().jsonProvider().parse(sjson);
         String json = "...";
-        List<String> authors = JsonPath.read(sjson, "$.store.book[*].author");
-       print(authors);
+          String authors1 = JsonPath.read(sjson, "$.store.book[0].author");
+
+       // List<String> authors = JsonPath.read(sjson, "$.store.book[0].author");
+
+       print(authors1);
         getJsonValue(sjson);
     }
 
@@ -38,7 +41,7 @@ public class Jpath {
 
     private static void getJsonValue(String json) {
         //The authors of all books：获取json中store下book下的所有author值
-        List<String> authors1 = JsonPath.read(json, "$.store.book[*].author");
+        List<String> authors1 = JsonPath.read(json, "$.store.book[0].author");
 
         //All authors：获取所有json中所有author的值
         List<String> authors2 = JsonPath.read(json, "$..author");

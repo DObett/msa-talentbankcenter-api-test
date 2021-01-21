@@ -1,14 +1,14 @@
 Feature: 收入确认-IR (IR00001)
 
-	@first
- Scenario Outline: 优路学员确认列表 (IR00001)
+
+    Scenario Outline: 优路学员确认列表 (IR00001)
 	 Given API "/api/ir/item/view/list"
 	 And CookieX
 		 | TOKEN | ${token} |
 	 And Param
 	 """
-	 pageIndex : "0"
-	 pageSize : "10"
+	 pageIndex :
+	 pageSize :
 	 orderNo :
 	 userId :
 	 projectId :
@@ -28,6 +28,34 @@ Feature: 收入确认-IR (IR00001)
 	 Then JSONPATH_ASSERT "<jsonPath>" equals "<value>"
 	 Examples:
 	 | jsonPath | value |
-	 |  result  | 000000 |
-	 |  data.data[0].classes.className  |  2020执业中药师四科联报贺岁无忧班 |
+	 |data.data[0].classes[0].className| 2020执业中药师四科联报贺岁无忧班 |
+	 |  result  | 000000|
+
+
+	Scenario Outline: 优路学员确认列表 (IR00001)
+
+		Given API "/api/ir/item/view/list"
+		And CookieX
+			| TOKEN | ${token} |
+		And Param
+	 """
+	 pageIndex :
+	 pageSize :
+	 orderNo :
+	 userId :
+	 projectId :
+	 schoolId :
+	 orderType :
+	 itemdtlAimdatestart : 123
+	 itemdtlAimdateend : 123
+
+
+	 """
+		When GET
+		Then STATUS "200"
+
+		Then JSONPATH_ASSERT "<jsonPath>" equals "<value>"
+		Examples:
+			| jsonPath | value |
+			|  result  | GB1001|
 

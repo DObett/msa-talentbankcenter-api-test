@@ -20,3 +20,25 @@ Feature:收入确认-IR (IR00006)
 	 Examples:
 	 | jsonPath | value  |
 	 | result   | 000000 |
+
+
+
+	Scenario Outline: 统计信息月份 (IR00006)
+		Given API "/api/ir/stat/view/month"
+		And CookieX
+			| TOKEN | ${token} |
+		And Param
+	 """
+	 startDate:
+	 endDate:
+	 schoolId: sss
+	 projectId: sss
+	 """
+
+
+		When GET
+		Then STATUS "200"
+		Then JSONPATH_ASSERT "<jsonPath>" equals "<value>"
+		Examples:
+			| jsonPath | value  |
+			| result   |GB2001 |

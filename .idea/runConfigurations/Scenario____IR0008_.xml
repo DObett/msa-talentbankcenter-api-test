@@ -7,7 +7,7 @@
     <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/A_1_8IR0008.feature" />
     <option name="GLUE" value="com.youlu.api" />
     <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-    <module name="msa-talentbankcenter-api-test" />
+    <module name="msa-ircenter-api-test" />
     <option name="NAME_FILTER" value="^统计信息大区 \(IR0008\)$" />
     <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^统计信息大区 \(IR0008\)$&quot;" />
     <option name="SUGGESTED_NAME" value="Scenario: 统计信息大区 (IR0008)" />
