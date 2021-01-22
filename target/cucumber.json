@@ -1,0 +1,5562 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:24.880Z",
+        "line": 4,
+        "name": "初始化变量数据",
+        "description": "",
+        "id": "初始化数据;初始化变量数据",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 235000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "INI_VAR_DATA",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.iniVarData(java.lang.String)"
+            },
+            "keyword": "Given ",
+            "doc_string": {
+              "line": 6,
+              "value": "userName : YL025048\npassWord : youlu@2019\n"
+            }
+          }
+        ]
+      }
+    ],
+    "name": "初始化数据",
+    "description": "",
+    "id": "初始化数据",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_0_0_init.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:25.313Z",
+        "line": 20,
+        "name": "图形验证码",
+        "description": "",
+        "id": "图形验证码;图形验证码;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "API \"/api/sc/captcha/token\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/sc/captcha/token",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 6,
+              "value": "captchaScene :\ncaptchaType:\n"
+            }
+          },
+          {
+            "result": {
+              "duration": 1888000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 625000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 51000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data.captchaToken",
+                  "captchaToken"
+                ]
+              },
+              {
+                "cells": [
+                  "data.captchaValue",
+                  "captchaValue"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "图形验证码",
+    "description": "",
+    "id": "图形验证码",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_0_1LOGIN.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:27.895Z",
+        "line": 21,
+        "name": "验证码登录",
+        "description": "",
+        "id": "验证码登录;验证码登录;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "API \"/api/uc/login\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/uc/login",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 6,
+              "value": "      userLoginname : ${userName}\n      userLoginpwd : ${passWord}\n      userMobile   :\n      userFlag : I\n"
+            }
+          },
+          {
+            "result": {
+              "duration": 934000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 29000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data.token",
+                  "token"
+                ]
+              },
+              {
+                "cells": [
+                  "data.userId",
+                  "userId"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "验证码登录",
+    "description": "      // http://umsacheck.niceloo.com",
+    "id": "验证码登录",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_0_2LOGIN.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:28.892Z",
+        "line": 31,
+        "name": "优路学员确认列表 (IR00001)",
+        "description": "",
+        "id": "收入确认-ir-(ir00001);优路学员确认列表-(ir00001);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/item/view/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 9,
+              "value": "pageIndex :\npageSize :\norderNo :\nuserId :\nprojectId :\nschoolId :\norderType :\nitemdtlAimdatestart :\nitemdtlAimdateend :\n\n"
+            }
+          },
+          {
+            "result": {
+              "duration": 1503000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 96000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data.data.itemId[0]",
+                  "itemId"
+                ]
+              },
+              {
+                "cells": [
+                  "data.data.orderId[0]",
+                  "orderId"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 69000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "JSONPATH_ASSERT \"data.data[0].classes[0].className\" equals \"2020执业中药师四科联报贺岁无忧班\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "data.data[0].classes[0].className",
+                  "offset": 17
+                },
+                {
+                  "val": "2020执业中药师四科联报贺岁无忧班",
+                  "offset": 60
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:30.578Z",
+        "line": 59,
+        "name": "优路学员确认列表 (IR00001)",
+        "description": "",
+        "id": "收入确认-ir-(ir00001);优路学员确认列表-(ir00001);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "API \"/api/ir/item/view/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 40,
+              "value": "pageIndex :\npageSize :\norderNo :\nuserId :\nprojectId :\nschoolId :\norderType :\nitemdtlAimdatestart : 123\nitemdtlAimdateend : 123\n\n"
+            }
+          },
+          {
+            "result": {
+              "duration": 100000000,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15000000,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB1001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB1001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00001)",
+    "description": "",
+    "id": "收入确认-ir-(ir00001)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00001%E4%BC%98%E8%B7%AF%E5%AD%A6%E5%91%98%E7%A1%AE%E8%AE%A4%E5%88%97%E8%A1%A8.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:30.706Z",
+        "line": 20,
+        "name": "优路学员确认项详情 (IR00002)",
+        "description": "",
+        "id": "收入确认-ir-(ir00002);优路学员确认项详情-(ir00002);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/item/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 9,
+              "value": "itemId : ${itemId}\nstartDate :\nendDate :"
+            }
+          },
+          {
+            "result": {
+              "duration": 383000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 34000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:31.134Z",
+        "line": 39,
+        "name": "优路学员确认项详情 (IR00002)",
+        "description": "",
+        "id": "收入确认-ir-(ir00002);优路学员确认项详情-(ir00002);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "API \"/api/ir/item/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 28,
+              "value": "itemId : ITEM20201229010001142812\nstartDate : 123\nendDate :"
+            }
+          },
+          {
+            "result": {
+              "duration": 21000000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15000000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB2001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB2001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00002)",
+    "description": "",
+    "id": "收入确认-ir-(ir00002)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00002%E4%BC%98%E8%B7%AF%E5%AD%A6%E5%91%98%E7%A1%AE%E8%AE%A4%E9%A1%B9%E8%AF%A6%E6%83%85.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:31.180Z",
+        "line": 23,
+        "name": "优路学员收入确认统计 (IR00003)",
+        "description": "",
+        "id": "收入确认-ir-(ir00003);优路学员收入确认统计-(ir00003);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/item/view/stat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/stat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 9,
+              "value": "projectId:\nschoolId:\norderCreatedatestart :\norderCreatedateend :\norderType :\nitemdtlAimdatestart : \"2019-01\"\nitemdtlAimdateend : \"2019-03\""
+            }
+          },
+          {
+            "result": {
+              "duration": 622000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 34000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:31.859Z",
+        "line": 46,
+        "name": "优路学员收入确认统计 (IR00003)",
+        "description": "",
+        "id": "收入确认-ir-(ir00003);优路学员收入确认统计-(ir00003);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "API \"/api/ir/item/view/stat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/stat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 32,
+              "value": "projectId:\nschoolId:\norderCreatedatestart : ss\norderCreatedateend : ss\norderType : ss\nitemdtlAimdatestart : \"2019-01\"\nitemdtlAimdateend : \"2019-03\""
+            }
+          },
+          {
+            "result": {
+              "duration": 32000000,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB2001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB2001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00003)",
+    "description": "",
+    "id": "收入确认-ir-(ir00003)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00003%E4%BC%98%E8%B7%AF%E5%AD%A6%E5%91%98%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:31.917Z",
+        "line": 21,
+        "name": "统计信息项目 (IR00004)",
+        "description": "",
+        "id": "收入确认-ir-(ir00004);统计信息项目-(ir00004);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/stat/view/project\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/stat/view/project",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 9,
+              "value": "   startDate: 2020-2\n   endDate: 2020-2\n   schoolId: \"\""
+            }
+          },
+          {
+            "result": {
+              "duration": 21000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:31.959Z",
+        "line": 41,
+        "name": "统计信息项目 (IR00004)",
+        "description": "",
+        "id": "收入确认-ir-(ir00004);统计信息项目-(ir00004);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "API \"/api/ir/stat/view/project\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/stat/view/project",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 29,
+              "value": "   startDate: 2020-2-2\n   endDate: 2020-2-2\n   schoolId: sdsdsd"
+            }
+          },
+          {
+            "result": {
+              "duration": 29000000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00004)",
+    "description": "",
+    "id": "收入确认-ir-(ir00004)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00004%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF%E9%A1%B9%E7%9B%AE.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:32.009Z",
+        "line": 19,
+        "name": "统计信息概要 (IR00005)",
+        "description": "",
+        "id": "收入确认-ir-(ir00005);统计信息概要-(ir00005);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/stat/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/stat/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 9,
+              "value": "startDate: 2020-01\nendDate: 2020-01"
+            }
+          },
+          {
+            "result": {
+              "duration": 178000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 34000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:32.241Z",
+        "line": 38,
+        "name": "统计信息概要 (IR00005)",
+        "description": "",
+        "id": "收入确认-ir-(ir00005);统计信息概要-(ir00005);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "API \"/api/ir/stat/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/stat/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 28,
+              "value": "startDate: sss\nendDate: sss"
+            }
+          },
+          {
+            "result": {
+              "duration": 43000000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB1001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB1001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00005)",
+    "description": "",
+    "id": "收入确认-ir-(ir00005)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00005%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF%E6%A6%82%E8%A6%81.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:32.307Z",
+        "line": 22,
+        "name": "统计信息月份 (IR00006)",
+        "description": "",
+        "id": "收入确认-ir-(ir00006);统计信息月份-(ir00006);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/stat/view/month\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/stat/view/month",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 9,
+              "value": "startDate: 2020-01\nendDate: 2020-01\nschoolId:\nprojectId:"
+            }
+          },
+          {
+            "result": {
+              "duration": 81000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:32.406Z",
+        "line": 44,
+        "name": "统计信息月份 (IR00006)",
+        "description": "",
+        "id": "收入确认-ir-(ir00006);统计信息月份-(ir00006);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "API \"/api/ir/stat/view/month\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/stat/view/month",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 31,
+              "value": "startDate:\nendDate:\nschoolId: sss\nprojectId: sss"
+            }
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB2001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB2001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00006)",
+    "description": "",
+    "id": "收入确认-ir-(ir00006)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00006%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF%E6%9C%88%E4%BB%BD.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:32.442Z",
+        "line": 20,
+        "name": "统计信息大区 (IR00007)",
+        "description": "",
+        "id": "收入确认-ir-(ir00007);统计信息大区-(ir00007);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/stat/view/area\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/stat/view/area",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   startDate: 2020-01\n   endDate: 2020-01\n   projectId:"
+            }
+          },
+          {
+            "result": {
+              "duration": 190000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 48000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:32.724Z",
+        "line": 41,
+        "name": "统计信息大区 (IR00007)",
+        "description": "",
+        "id": "收入确认-ir-(ir00007);统计信息大区-(ir00007);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "API \"/api/ir/stat/view/area\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/stat/view/area",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 28,
+              "value": "   startDate: 2020-01\n   endDate: 2020-01\n   projectId: ssss"
+            }
+          },
+          {
+            "result": {
+              "duration": 98000000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00007)",
+    "description": "",
+    "id": "收入确认-ir-(ir00007)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00007%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF%E5%A4%A7%E5%8C%BA.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:32.844Z",
+        "line": 18,
+        "name": "订单信息 (IR00008)",
+        "description": "",
+        "id": "收入确认-ir-(ir00008);订单信息-(ir00008);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/evidence/orderinfo\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/evidence/orderinfo",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   orderId: ${orderId}"
+            }
+          },
+          {
+            "result": {
+              "duration": 48000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 26000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:32.942Z",
+        "line": 35,
+        "name": "订单信息 (IR00008)",
+        "description": "",
+        "id": "收入确认-ir-(ir00008);订单信息-(ir00008);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "API \"/api/ir/evidence/orderinfo\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/evidence/orderinfo",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 24,
+              "value": "   orderId: ${orderId"
+            }
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB2001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB2001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00008)",
+    "description": "",
+    "id": "收入确认-ir-(ir00008)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00008%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:32.978Z",
+        "line": 26,
+        "name": "优路企业确认列表 (IR00009)",
+        "description": "",
+        "id": "收入确认-ir-(ir00009);优路企业确认列表-(ir00009);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/org/item/view/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/item/view/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "  pageIndex: \"0\"\n  pageSize: \"10\"\n  orderNo:\n  orgName:\n  itemdtlAimdatestart:\n  itemdtlAimdateend:\n  projectId:\n  schoolId:\n  orderType:"
+            }
+          },
+          {
+            "result": {
+              "duration": 163000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 27000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 18000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data.data.itemId[0]",
+                  "itemId"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:33.201Z",
+        "line": 50,
+        "name": "优路企业确认列表 (IR00009)",
+        "description": "",
+        "id": "收入确认-ir-(ir00009);优路企业确认列表-(ir00009);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "API \"/api/ir/org/item/view/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/item/view/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 32,
+              "value": "  pageIndex: \"0\"\n  pageSize: \"10\"\n  orderNo:\n  orgName:\n  itemdtlAimdatestart:\n  itemdtlAimdateend:\n  projectId:\n  schoolId: sdsd\n  orderType: sdsd"
+            }
+          },
+          {
+            "result": {
+              "duration": 72000000,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00009)",
+    "description": "",
+    "id": "收入确认-ir-(ir00009)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00009%E4%BC%98%E8%B7%AF%E4%BC%81%E4%B8%9A%E7%A1%AE%E8%AE%A4%E5%88%97%E8%A1%A8.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:33.296Z",
+        "line": 18,
+        "name": "优路企业确认项详情 (IR00010)",
+        "description": "",
+        "id": "收入确认-ir-(ir00010);优路企业确认项详情-(ir00010);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/org/item/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/item/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "itemId: ${itemId}"
+            }
+          },
+          {
+            "result": {
+              "duration": 371000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:33.724Z",
+        "line": 37,
+        "name": "优路企业确认项详情 (IR00010)",
+        "description": "",
+        "id": "收入确认-ir-(ir00010);优路企业确认项详情-(ir00010);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "API \"/api/ir/org/item/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/item/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 26,
+              "value": "itemId: ${itemId"
+            }
+          },
+          {
+            "result": {
+              "duration": 13000000,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB2001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB2001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00010)",
+    "description": "",
+    "id": "收入确认-ir-(ir00010)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00010%E4%BC%98%E8%B7%AF%E4%BC%81%E4%B8%9A%E7%A1%AE%E8%AE%A4%E9%A1%B9%E8%AF%A6%E6%83%85.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:33.761Z",
+        "line": 22,
+        "name": "优路企业收入确认统计 (IR00011)",
+        "description": "",
+        "id": "收入确认-ir-(ir00011);优路企业收入确认统计-(ir00011);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/org/item/view/stat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/item/view/stat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart:\n   itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 15000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:33.804Z",
+        "line": 44,
+        "name": "优路企业收入确认统计 (IR00011)",
+        "description": "",
+        "id": "收入确认-ir-(ir00011);优路企业收入确认统计-(ir00011);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "API \"/api/ir/org/item/view/stat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/item/view/stat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 29,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart: ssss\n   itemdtlAimdateend: sss"
+            }
+          },
+          {
+            "result": {
+              "duration": 18000000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB1001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB1001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00011)",
+    "description": "",
+    "id": "收入确认-ir-(ir00011)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00011%E4%BC%98%E8%B7%AF%E4%BC%81%E4%B8%9A%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:33.846Z",
+        "line": 22,
+        "name": "企业收入确认子订单列表 (IR00012)",
+        "description": "",
+        "id": "收入确认-ir-(ir00012);企业收入确认子订单列表-(ir00012);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/org/member/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/member/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   itemId: ${itemId}\n   pageIndex:\n   pageSize:\n   orderKey:\n   orderVal:"
+            }
+          },
+          {
+            "result": {
+              "duration": 98000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:33.995Z",
+        "line": 44,
+        "name": "企业收入确认子订单列表 (IR00012)",
+        "description": "",
+        "id": "收入确认-ir-(ir00012);企业收入确认子订单列表-(ir00012);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "API \"/api/ir/org/member/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/member/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 29,
+              "value": "   itemId: ${itemId}\n   pageIndex:\n   pageSize:\n   orderKey: ss\n   orderVal: ss"
+            }
+          },
+          {
+            "result": {
+              "duration": 97000000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00012)",
+    "description": "",
+    "id": "收入确认-ir-(ir00012)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00012%E4%BC%81%E4%B8%9A%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E5%AD%90%E8%AE%A2%E5%8D%95%E5%88%97%E8%A1%A8.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:34.117Z",
+        "line": 21,
+        "name": "收入确认税率表添加 (IR00013)",
+        "description": "",
+        "id": "收入确认-ir-(ir00013);收入确认税率表添加-(ir00013);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/taxrate/add\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/taxrate/add",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   taxrateStartmonth:\n   taxrateEndmonth:\n   taxrateAmount:\n   taxrateType:"
+            }
+          },
+          {
+            "result": {
+              "duration": 22000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB2001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB2001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00013)",
+    "description": "",
+    "id": "收入确认-ir-(ir00013)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00013%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E7%A8%8E%E7%8E%87%E8%A1%A8%E6%B7%BB%E5%8A%A0.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:34.175Z",
+        "line": 22,
+        "name": "个人税金统计 (IR00014)",
+        "description": "",
+        "id": "收入确认-ir-(ir00014);个人税金统计-(ir00014);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/item/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart:\n   itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 381000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:34.592Z",
+        "line": 44,
+        "name": "个人税金统计 (IR00014)",
+        "description": "",
+        "id": "收入确认-ir-(ir00014);个人税金统计-(ir00014);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "API \"/api/ir/item/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 29,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart: sss\n   itemdtlAimdateend: sss"
+            }
+          },
+          {
+            "result": {
+              "duration": 14000000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB1001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB1001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00014)",
+    "description": "",
+    "id": "收入确认-ir-(ir00014)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00014%E4%B8%AA%E4%BA%BA%E7%A8%8E%E9%87%91%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:34.626Z",
+        "line": 22,
+        "name": "企业税金统计 (IR00015)",
+        "description": "",
+        "id": "收入确认-ir-(ir00015);企业税金统计-(ir00015);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/org/item/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/item/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart:\n   itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 75000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 6000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-21T09:32:34.728Z",
+        "line": 43,
+        "name": "企业税金统计 (IR00015)",
+        "description": "",
+        "id": "收入确认-ir-(ir00015);企业税金统计-(ir00015);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "API \"/api/ir/org/item/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/item/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 28,
+              "value": "   projectId:\n   schoolId: s\n   orderType: ss\n   itemdtlAimdatestart: ss\n   itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB1001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB1001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00015)",
+    "description": "",
+    "id": "收入确认-ir-(ir00015)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00015%E4%BC%81%E4%B8%9A%E7%A8%8E%E9%87%91%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:34.766Z",
+        "line": 30,
+        "name": "合作商收入确认列表 (IR00016)",
+        "description": "",
+        "id": "收入确认-ir-(ir00016);合作商收入确认列表-(ir00016);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/pnr/item/view/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/pnr/item/view/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "      pageIndex:\n      pageSize:\n      orderKey:\n      orderVal:\n      orderNo:\n      companyName:\n      projectId:\n      schoolId:\n      orderCreatedatestart:\n      orderCreatedateend:\n      orderType:\n      itemdtlAimdatestart:\n      itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 186000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 25000000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00016)",
+    "description": "",
+    "id": "收入确认-ir-(ir00016)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00016%E5%90%88%E4%BD%9C%E5%95%86%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E5%88%97%E8%A1%A8.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:35.009Z",
+        "line": 22,
+        "name": "合作商收入确认统计 (IR00017)",
+        "description": "",
+        "id": "收入确认-ir-(ir00017);合作商收入确认统计-(ir00017);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/pnr/item/view/stat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/pnr/item/view/stat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "      projectId:\n      schoolId:\n      orderType:\n      itemdtlAimdatestart:\n      itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 89000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00017)",
+    "description": "",
+    "id": "收入确认-ir-(ir00017)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00017%E5%90%88%E4%BD%9C%E5%95%86%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:35.121Z",
+        "line": 18,
+        "name": "合作商收入确认详情 (IR00018)",
+        "description": "",
+        "id": "收入确认-ir-(ir00018);合作商收入确认详情-(ir00018);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/pnr/item/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/pnr/item/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "      itemId: PNRITEM20210105010000003978"
+            }
+          },
+          {
+            "result": {
+              "duration": 206000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 23000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00018)",
+    "description": "",
+    "id": "收入确认-ir-(ir00018)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00018%E5%90%88%E4%BD%9C%E5%95%86%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E8%AF%A6%E6%83%85.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:35.375Z",
+        "line": 27,
+        "name": "环球收入确认列表 (IR00019)",
+        "description": "",
+        "id": "收入确认-ir-(ir00019);环球收入确认列表-(ir00019);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/hq/item/view/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/hq/item/view/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "\n      pageIndex:\n      pageSize:\n      orderNo:\n      userId:\n      projectId:\n      schoolId:\n      orderType:\n      itemdtlAimdatestart:\n      itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 150000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 33000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data.data.itemId[0]",
+                  "itemId"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00019)",
+    "description": "",
+    "id": "收入确认-ir-(ir00019)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00019%E7%8E%AF%E7%90%83%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E5%88%97%E8%A1%A8.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:35.598Z",
+        "line": 20,
+        "name": "环球学员收入确认详情 (IR00020)",
+        "description": "",
+        "id": "收入确认-ir-(ir00020);环球学员收入确认详情-(ir00020);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/hq/item/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/hq/item/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "     itemId: ${itemId}\n     startDate:\n     endDate:"
+            }
+          },
+          {
+            "result": {
+              "duration": 247000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 35000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 28000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00020)",
+    "description": "",
+    "id": "收入确认-ir-(ir00020)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00020%E7%8E%AF%E7%90%83%E5%AD%A6%E5%91%98%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E8%AF%A6%E6%83%85.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:35.937Z",
+        "line": 24,
+        "name": "环球学员收入确认统计 (IR00021)",
+        "description": "",
+        "id": "收入确认-ir-(ir00021);环球学员收入确认统计-(ir00021);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/hq/item/view/stat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/hq/item/view/stat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart: 2020-01\n   itemdtlAimdateend: 2020-01\n   orderCreatedatestart:\n   orderCreatedateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 150000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 30000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00021)",
+    "description": "",
+    "id": "收入确认-ir-(ir00021)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00021%E7%8E%AF%E7%90%83%E5%AD%A6%E5%91%98%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:36.143Z",
+        "line": 26,
+        "name": "锅巴学员收入确认列表 (IR00022)",
+        "description": "",
+        "id": "收入确认-ir-(ir00022);锅巴学员收入确认列表-(ir00022);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/gb/item/view/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/gb/item/view/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "  pageIndex: \"0\"\n  pageSize: \"10\"\n  orderNo:\n  userId:\n  itemdtlAimdatestart:\n  itemdtlAimdateend:\n  projectId:\n  schoolId:\n  orderType:"
+            }
+          },
+          {
+            "result": {
+              "duration": 213000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 24000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 27000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data.data.itemId[0]",
+                  "itemId"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00022)",
+    "description": "",
+    "id": "收入确认-ir-(ir00022)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00022%E9%94%85%E5%B7%B4%E5%AD%A6%E5%91%98%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E5%88%97%E8%A1%A8.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:36.417Z",
+        "line": 19,
+        "name": "锅巴学员收入确认详情 (IR00023)",
+        "description": "",
+        "id": "收入确认-ir-(ir00023);锅巴学员收入确认详情-(ir00023);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/gb/item/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/gb/item/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "     itemId: ${itemId}\n     startDate:\n     endDate:"
+            }
+          },
+          {
+            "result": {
+              "duration": 238000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00023)",
+    "description": "",
+    "id": "收入确认-ir-(ir00023)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00023%E9%94%85%E5%B7%B4%E5%AD%A6%E5%91%98%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E8%AF%A6%E6%83%85.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:36.674Z",
+        "line": 24,
+        "name": "锅巴学员收入确认统计 (IR00024)",
+        "description": "",
+        "id": "收入确认-ir-(ir00024);锅巴学员收入确认统计-(ir00024);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/gb/item/view/stat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/gb/item/view/stat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart: 2020-01\n   itemdtlAimdateend: 2020-01\n   orderCreatedatestart:\n   orderCreatedateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 127000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00024)",
+    "description": "",
+    "id": "收入确认-ir-(ir00024)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00024%E9%94%85%E5%B7%B4%E5%AD%A6%E5%91%98%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:36.826Z",
+        "line": 17,
+        "name": "锅巴学员引流订单详情 (IR00025)",
+        "description": "",
+        "id": "收入确认-ir-(ir00025);锅巴学员引流订单详情-(ir00025);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/gb/item/view/trgivinfo\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/gb/item/view/trgivinfo",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "     itemId: ${itemId}"
+            }
+          },
+          {
+            "result": {
+              "duration": 73000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00025)",
+    "description": "",
+    "id": "收入确认-ir-(ir00025)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00025%E9%94%85%E5%B7%B4%E5%AD%A6%E5%91%98%E5%BC%95%E6%B5%81%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:36.910Z",
+        "line": 22,
+        "name": "小微学员收入确认列表 (IR00026)",
+        "description": "",
+        "id": "收入确认-ir-(ir00026);小微学员收入确认列表-(ir00026);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/tra/view/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/tra/view/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "  pageIndex: \"0\"\n  pageSize: \"10\"\n  orderNo:\n  startDate:\n  endDate:"
+            }
+          },
+          {
+            "result": {
+              "duration": 1438000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 17000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data.data.traitemId[0]",
+                  "traitemId"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00026)",
+    "description": "",
+    "id": "收入确认-ir-(ir00026)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00026%E5%B0%8F%E5%BE%AE%E5%AD%A6%E5%91%98%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E5%88%97%E8%A1%A8.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:38.388Z",
+        "line": 17,
+        "name": "小微学员收入确认详情 (IR00027)",
+        "description": "",
+        "id": "收入确认-ir-(ir00027);小微学员收入确认详情-(ir00027);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/tra/view/info\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/tra/view/info",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "  traitemId: ${traitemId}"
+            }
+          },
+          {
+            "result": {
+              "duration": 353000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00027)",
+    "description": "",
+    "id": "收入确认-ir-(ir00027)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00027%E5%B0%8F%E5%BE%AE%E5%AD%A6%E5%91%98%E6%94%B6%E5%85%A5%E7%A1%AE%E8%AE%A4%E8%AF%A6%E6%83%85.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:38.764Z",
+        "line": 18,
+        "name": "小微统计 (IR00028)",
+        "description": "",
+        "id": "收入确认-ir-(ir00028);小微统计-(ir00028);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/tra/view/stat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/tra/view/stat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "  startDate:\n  endDate:"
+            }
+          },
+          {
+            "result": {
+              "duration": 80000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00028)",
+    "description": "",
+    "id": "收入确认-ir-(ir00028)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00028%E5%B0%8F%E5%BE%AE%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:38.861Z",
+        "line": 21,
+        "name": "合作商税金统计 (IR00029)",
+        "description": "",
+        "id": "收入确认-ir-(ir00029);合作商税金统计-(ir00029);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/pnr/item/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/pnr/item/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "      projectId:\n      schoolId:\n      orderType:\n      itemdtlAimdatestart:\n      itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 153000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 27000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00029)",
+    "description": "",
+    "id": "收入确认-ir-(ir00029)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00029%E5%90%88%E4%BD%9C%E5%95%86%E7%A8%8E%E9%87%91%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-21T09:32:39.049Z",
+        "line": 18,
+        "name": "小微税金统计 (IR00030)",
+        "description": "",
+        "id": "收入确认-ir-(ir00030);小微税金统计-(ir00030);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/tra/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/tra/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "      itemdtlAimdatestart:\n      itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 177000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 26000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00030)",
+    "description": "",
+    "id": "收入确认-ir-(ir00030)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00030%E5%B0%8F%E5%BE%AE%E7%A8%8E%E9%87%91%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  }
+]
