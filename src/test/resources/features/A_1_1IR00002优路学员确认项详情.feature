@@ -7,7 +7,7 @@ Feature: 收入确认-IR (IR00002)
 	 | TOKEN | ${token} |
 	 And Param
 	 """
-itemId : ${itemId}
+itemId : ${itemId1}
 startDate :
 endDate :
 	 """

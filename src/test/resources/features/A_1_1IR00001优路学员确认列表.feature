@@ -22,7 +22,7 @@ Feature: 收入确认-IR (IR00001)
 	 When GET
 	 Then STATUS "200"
 	 Then JSONPATH_GET_MONGO
-		 | data.data.itemId[0]| itemId |
+		 | data.data.itemId[0]| itemId1 |
 		 | data.data.orderId[0]| orderId|
 
 	 Then JSONPATH_ASSERT "<jsonPath>" equals "<value>"

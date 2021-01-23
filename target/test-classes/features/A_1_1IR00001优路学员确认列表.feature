@@ -22,13 +22,14 @@ Feature: 收入确认-IR (IR00001)
 	 When GET
 	 Then STATUS "200"
 	 Then JSONPATH_GET_MONGO
-		 | data.data.itemId[0]| itemId |
+		 | data.data.itemId[0]| itemId1 |
 		 | data.data.orderId[0]| orderId|
 
 	 Then JSONPATH_ASSERT "<jsonPath>" equals "<value>"
 	 Examples:
 	 | jsonPath | value |
 	 |data.data[0].classes[0].className| 2020执业中药师四科联报贺岁无忧班 |
+	 |  result  | 000000|
 
 
 	Scenario Outline: 优路学员确认列表 (IR00001)

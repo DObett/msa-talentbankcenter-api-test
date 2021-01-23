@@ -5,7 +5,7 @@ Feature: 收入确认-IR (IR00020)
     Given API "/api/ir/hq/item/view/info"
     And Param
 	 """
-       itemId: ${itemId}
+       itemId: ${itemId2}
        startDate:
        endDate:
 	 """

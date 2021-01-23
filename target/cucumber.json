@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:24.880Z",
+        "start_timestamp": "2021-01-23T00:56:44.067Z",
         "line": 4,
         "name": "初始化变量数据",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 235000000,
+              "duration": 376000000,
               "status": "passed"
             },
             "line": 5,
@@ -41,7 +41,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:25.313Z",
+        "start_timestamp": "2021-01-23T00:56:44.674Z",
         "line": 20,
         "name": "图形验证码",
         "description": "",
@@ -69,6 +69,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -84,7 +85,7 @@
           },
           {
             "result": {
-              "duration": 1888000000,
+              "duration": 2537000000,
               "status": "passed"
             },
             "line": 11,
@@ -113,7 +114,7 @@
           },
           {
             "result": {
-              "duration": 625000000,
+              "duration": 715000000,
               "status": "passed"
             },
             "line": 13,
@@ -135,7 +136,7 @@
           },
           {
             "result": {
-              "duration": 51000000,
+              "duration": 36000000,
               "status": "passed"
             },
             "line": 14,
@@ -173,7 +174,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:27.895Z",
+        "start_timestamp": "2021-01-23T00:56:47.984Z",
         "line": 21,
         "name": "验证码登录",
         "description": "",
@@ -201,6 +202,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -216,7 +218,7 @@
           },
           {
             "result": {
-              "duration": 934000000,
+              "duration": 881000000,
               "status": "passed"
             },
             "line": 13,
@@ -228,7 +230,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 14,
@@ -246,7 +247,7 @@
           },
           {
             "result": {
-              "duration": 16000000,
+              "duration": 17000000,
               "status": "passed"
             },
             "line": 15,
@@ -268,7 +269,7 @@
           },
           {
             "result": {
-              "duration": 29000000,
+              "duration": 33000000,
               "status": "passed"
             },
             "line": 16,
@@ -306,7 +307,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:28.892Z",
+        "start_timestamp": "2021-01-23T00:56:48.936Z",
         "line": 31,
         "name": "优路学员确认列表 (IR00001)",
         "description": "",
@@ -316,6 +317,7 @@
         "steps": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -353,7 +355,7 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "line": 8,
@@ -369,7 +371,7 @@
           },
           {
             "result": {
-              "duration": 1503000000,
+              "duration": 1859000000,
               "status": "passed"
             },
             "line": 22,
@@ -381,6 +383,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 23,
@@ -398,7 +401,7 @@
           },
           {
             "result": {
-              "duration": 96000000,
+              "duration": 140000000,
               "status": "passed"
             },
             "line": 24,
@@ -410,7 +413,7 @@
               {
                 "cells": [
                   "data.data.itemId[0]",
-                  "itemId"
+                  "itemId1"
                 ]
               },
               {
@@ -424,7 +427,7 @@
           },
           {
             "result": {
-              "duration": 69000000,
+              "duration": 187000000,
               "status": "passed"
             },
             "line": 28,
@@ -447,8 +450,149 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:30.578Z",
-        "line": 59,
+        "start_timestamp": "2021-01-23T00:56:51.157Z",
+        "line": 32,
+        "name": "优路学员确认列表 (IR00001)",
+        "description": "",
+        "id": "收入确认-ir-(ir00001);优路学员确认列表-(ir00001);;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/item/view/list\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/list",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "CookieX",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "TOKEN",
+                  "${token}"
+                ]
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 9,
+              "value": "pageIndex :\npageSize :\norderNo :\nuserId :\nprojectId :\nschoolId :\norderType :\nitemdtlAimdatestart :\nitemdtlAimdateend :\n\n"
+            }
+          },
+          {
+            "result": {
+              "duration": 1459000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 77000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data.data.itemId[0]",
+                  "itemId1"
+                ]
+              },
+              {
+                "cells": [
+                  "data.data.orderId[0]",
+                  "orderId"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-23T00:56:52.741Z",
+        "line": 60,
         "name": "优路学员确认列表 (IR00001)",
         "description": "",
         "id": "收入确认-ir-(ir00001);优路学员确认列表-(ir00001);;2",
@@ -459,7 +603,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 36,
+            "line": 37,
             "name": "API \"/api/ir/item/view/list\"",
             "match": {
               "arguments": [
@@ -477,7 +621,7 @@
               "duration": 1000000,
               "status": "passed"
             },
-            "line": 37,
+            "line": 38,
             "name": "CookieX",
             "match": {
               "location": "com.youlu.api.CommonStepDefinitions.CookieX(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
@@ -494,26 +638,26 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 3000000,
               "status": "passed"
             },
-            "line": 39,
+            "line": 40,
             "name": "Param",
             "match": {
               "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
             },
             "keyword": "And ",
             "doc_string": {
-              "line": 40,
+              "line": 41,
               "value": "pageIndex :\npageSize :\norderNo :\nuserId :\nprojectId :\nschoolId :\norderType :\nitemdtlAimdatestart : 123\nitemdtlAimdateend : 123\n\n"
             }
           },
           {
             "result": {
-              "duration": 100000000,
+              "duration": 50000000,
               "status": "passed"
             },
-            "line": 53,
+            "line": 54,
             "name": "GET",
             "match": {
               "location": "com.youlu.api.CommonStepDefinitions.get()"
@@ -524,7 +668,7 @@
             "result": {
               "status": "passed"
             },
-            "line": 54,
+            "line": 55,
             "name": "STATUS \"200\"",
             "match": {
               "arguments": [
@@ -542,7 +686,7 @@
               "duration": 15000000,
               "status": "passed"
             },
-            "line": 56,
+            "line": 57,
             "name": "JSONPATH_ASSERT \"result\" equals \"GB1001\"",
             "match": {
               "arguments": [
@@ -573,7 +717,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:30.706Z",
+        "start_timestamp": "2021-01-23T00:56:52.820Z",
         "line": 20,
         "name": "优路学员确认项详情 (IR00002)",
         "description": "",
@@ -600,6 +744,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -630,12 +775,12 @@
             "keyword": "And ",
             "doc_string": {
               "line": 9,
-              "value": "itemId : ${itemId}\nstartDate :\nendDate :"
+              "value": "itemId : ${itemId1}\nstartDate :\nendDate :"
             }
           },
           {
             "result": {
-              "duration": 383000000,
+              "duration": 410000000,
               "status": "passed"
             },
             "line": 14,
@@ -664,7 +809,7 @@
           },
           {
             "result": {
-              "duration": 34000000,
+              "duration": 25000000,
               "status": "passed"
             },
             "line": 17,
@@ -687,7 +832,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:31.134Z",
+        "start_timestamp": "2021-01-23T00:56:53.280Z",
         "line": 39,
         "name": "优路学员确认项详情 (IR00002)",
         "description": "",
@@ -697,6 +842,7 @@
         "steps": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 24,
@@ -748,7 +894,7 @@
           },
           {
             "result": {
-              "duration": 21000000,
+              "duration": 20000000,
               "status": "passed"
             },
             "line": 33,
@@ -777,7 +923,7 @@
           },
           {
             "result": {
-              "duration": 15000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 36,
@@ -811,7 +957,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:31.180Z",
+        "start_timestamp": "2021-01-23T00:56:53.326Z",
         "line": 23,
         "name": "优路学员收入确认统计 (IR00003)",
         "description": "",
@@ -821,7 +967,6 @@
         "steps": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -839,7 +984,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -875,7 +1019,7 @@
           },
           {
             "result": {
-              "duration": 622000000,
+              "duration": 1019000000,
               "status": "passed"
             },
             "line": 18,
@@ -887,7 +1031,7 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "line": 19,
@@ -905,7 +1049,7 @@
           },
           {
             "result": {
-              "duration": 34000000,
+              "duration": 33000000,
               "status": "passed"
             },
             "line": 20,
@@ -928,7 +1072,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:31.859Z",
+        "start_timestamp": "2021-01-23T00:56:54.397Z",
         "line": 46,
         "name": "优路学员收入确认统计 (IR00003)",
         "description": "",
@@ -990,7 +1134,7 @@
           },
           {
             "result": {
-              "duration": 32000000,
+              "duration": 15000000,
               "status": "passed"
             },
             "line": 41,
@@ -1019,7 +1163,7 @@
           },
           {
             "result": {
-              "duration": 13000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 43,
@@ -1053,7 +1197,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:31.917Z",
+        "start_timestamp": "2021-01-23T00:56:54.428Z",
         "line": 21,
         "name": "统计信息项目 (IR00004)",
         "description": "",
@@ -1099,7 +1243,7 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "line": 8,
@@ -1115,7 +1259,7 @@
           },
           {
             "result": {
-              "duration": 21000000,
+              "duration": 24000000,
               "status": "passed"
             },
             "line": 16,
@@ -1167,7 +1311,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:31.959Z",
+        "start_timestamp": "2021-01-23T00:56:54.491Z",
         "line": 41,
         "name": "统计信息项目 (IR00004)",
         "description": "",
@@ -1213,7 +1357,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 28,
@@ -1229,7 +1372,7 @@
           },
           {
             "result": {
-              "duration": 29000000,
+              "duration": 21000000,
               "status": "passed"
             },
             "line": 36,
@@ -1241,6 +1384,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 37,
@@ -1258,7 +1402,7 @@
           },
           {
             "result": {
-              "duration": 13000000,
+              "duration": 15000000,
               "status": "passed"
             },
             "line": 38,
@@ -1292,7 +1436,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:32.009Z",
+        "start_timestamp": "2021-01-23T00:56:54.546Z",
         "line": 19,
         "name": "统计信息概要 (IR00005)",
         "description": "",
@@ -1319,6 +1463,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -1338,7 +1483,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 8,
@@ -1354,7 +1498,7 @@
           },
           {
             "result": {
-              "duration": 178000000,
+              "duration": 456000000,
               "status": "passed"
             },
             "line": 13,
@@ -1383,7 +1527,7 @@
           },
           {
             "result": {
-              "duration": 34000000,
+              "duration": 32000000,
               "status": "passed"
             },
             "line": 16,
@@ -1406,7 +1550,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:32.241Z",
+        "start_timestamp": "2021-01-23T00:56:55.048Z",
         "line": 38,
         "name": "统计信息概要 (IR00005)",
         "description": "",
@@ -1453,6 +1597,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 27,
@@ -1468,7 +1613,7 @@
           },
           {
             "result": {
-              "duration": 43000000,
+              "duration": 19000000,
               "status": "passed"
             },
             "line": 32,
@@ -1497,7 +1642,7 @@
           },
           {
             "result": {
-              "duration": 13000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "line": 35,
@@ -1531,7 +1676,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:32.307Z",
+        "start_timestamp": "2021-01-23T00:56:55.084Z",
         "line": 22,
         "name": "统计信息月份 (IR00006)",
         "description": "",
@@ -1577,6 +1722,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 8,
@@ -1621,7 +1767,7 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 10000000,
               "status": "passed"
             },
             "line": 19,
@@ -1644,7 +1790,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:32.406Z",
+        "start_timestamp": "2021-01-23T00:56:55.185Z",
         "line": 44,
         "name": "统计信息月份 (IR00006)",
         "description": "",
@@ -1705,7 +1851,7 @@
           },
           {
             "result": {
-              "duration": 16000000,
+              "duration": 13000000,
               "status": "passed"
             },
             "line": 39,
@@ -1734,7 +1880,7 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 6000000,
               "status": "passed"
             },
             "line": 41,
@@ -1768,7 +1914,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:32.442Z",
+        "start_timestamp": "2021-01-23T00:56:55.213Z",
         "line": 20,
         "name": "统计信息大区 (IR00007)",
         "description": "",
@@ -1796,6 +1942,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -1811,7 +1958,7 @@
           },
           {
             "result": {
-              "duration": 190000000,
+              "duration": 215000000,
               "status": "passed"
             },
             "line": 12,
@@ -1840,7 +1987,7 @@
           },
           {
             "result": {
-              "duration": 48000000,
+              "duration": 64000000,
               "status": "passed"
             },
             "line": 15,
@@ -1862,7 +2009,7 @@
           },
           {
             "result": {
-              "duration": 31000000,
+              "duration": 47000000,
               "status": "passed"
             },
             "line": 16,
@@ -1883,7 +2030,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:32.724Z",
+        "start_timestamp": "2021-01-23T00:56:55.559Z",
         "line": 41,
         "name": "统计信息大区 (IR00007)",
         "description": "",
@@ -1893,6 +2040,7 @@
         "steps": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 26,
@@ -1926,7 +2074,7 @@
           },
           {
             "result": {
-              "duration": 98000000,
+              "duration": 83000000,
               "status": "passed"
             },
             "line": 33,
@@ -1955,7 +2103,7 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 36,
@@ -1977,7 +2125,7 @@
           },
           {
             "result": {
-              "duration": 8000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "line": 37,
@@ -2009,7 +2157,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:32.844Z",
+        "start_timestamp": "2021-01-23T00:56:55.662Z",
         "line": 18,
         "name": "订单信息 (IR00008)",
         "description": "",
@@ -2036,6 +2184,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -2051,7 +2200,7 @@
           },
           {
             "result": {
-              "duration": 48000000,
+              "duration": 53000000,
               "status": "passed"
             },
             "line": 10,
@@ -2080,7 +2229,7 @@
           },
           {
             "result": {
-              "duration": 26000000,
+              "duration": 10000000,
               "status": "passed"
             },
             "line": 13,
@@ -2102,7 +2251,7 @@
           },
           {
             "result": {
-              "duration": 16000000,
+              "duration": 11000000,
               "status": "passed"
             },
             "line": 14,
@@ -2123,7 +2272,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:32.942Z",
+        "start_timestamp": "2021-01-23T00:56:55.742Z",
         "line": 35,
         "name": "订单信息 (IR00008)",
         "description": "",
@@ -2150,7 +2299,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 23,
@@ -2166,7 +2314,7 @@
           },
           {
             "result": {
-              "duration": 12000000,
+              "duration": 14000000,
               "status": "passed"
             },
             "line": 27,
@@ -2195,7 +2343,7 @@
           },
           {
             "result": {
-              "duration": 8000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "line": 30,
@@ -2217,7 +2365,7 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 12000000,
               "status": "passed"
             },
             "line": 31,
@@ -2249,7 +2397,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:32.978Z",
+        "start_timestamp": "2021-01-23T00:56:55.780Z",
         "line": 26,
         "name": "优路企业确认列表 (IR00009)",
         "description": "",
@@ -2291,7 +2439,7 @@
           },
           {
             "result": {
-              "duration": 163000000,
+              "duration": 166000000,
               "status": "passed"
             },
             "line": 18,
@@ -2303,6 +2451,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 19,
@@ -2320,7 +2469,7 @@
           },
           {
             "result": {
-              "duration": 27000000,
+              "duration": 22000000,
               "status": "passed"
             },
             "line": 21,
@@ -2342,7 +2491,7 @@
           },
           {
             "result": {
-              "duration": 18000000,
+              "duration": 19000000,
               "status": "passed"
             },
             "line": 22,
@@ -2363,7 +2512,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:33.201Z",
+        "start_timestamp": "2021-01-23T00:56:55.999Z",
         "line": 50,
         "name": "优路企业确认列表 (IR00009)",
         "description": "",
@@ -2390,7 +2539,7 @@
           },
           {
             "result": {
-              "duration": 2000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 31,
@@ -2406,7 +2555,7 @@
           },
           {
             "result": {
-              "duration": 72000000,
+              "duration": 101000000,
               "status": "passed"
             },
             "line": 43,
@@ -2435,7 +2584,7 @@
           },
           {
             "result": {
-              "duration": 13000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 46,
@@ -2469,7 +2618,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:33.296Z",
+        "start_timestamp": "2021-01-23T00:56:56.118Z",
         "line": 18,
         "name": "优路企业确认项详情 (IR00010)",
         "description": "",
@@ -2497,7 +2646,6 @@
           },
           {
             "result": {
-              "duration": 2000000,
               "status": "passed"
             },
             "line": 6,
@@ -2513,7 +2661,7 @@
           },
           {
             "result": {
-              "duration": 371000000,
+              "duration": 401000000,
               "status": "passed"
             },
             "line": 10,
@@ -2525,6 +2673,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 11,
@@ -2542,7 +2691,7 @@
           },
           {
             "result": {
-              "duration": 14000000,
+              "duration": 26000000,
               "status": "passed"
             },
             "line": 13,
@@ -2564,7 +2713,7 @@
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 48000000,
               "status": "passed"
             },
             "line": 14,
@@ -2585,7 +2734,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:33.724Z",
+        "start_timestamp": "2021-01-23T00:56:56.604Z",
         "line": 37,
         "name": "优路企业确认项详情 (IR00010)",
         "description": "",
@@ -2595,7 +2744,6 @@
         "steps": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 24,
@@ -2628,7 +2776,7 @@
           },
           {
             "result": {
-              "duration": 13000000,
+              "duration": 14000000,
               "status": "passed"
             },
             "line": 29,
@@ -2657,7 +2805,7 @@
           },
           {
             "result": {
-              "duration": 7000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 32,
@@ -2679,7 +2827,7 @@
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 33,
@@ -2711,7 +2859,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:33.761Z",
+        "start_timestamp": "2021-01-23T00:56:56.642Z",
         "line": 22,
         "name": "优路企业收入确认统计 (IR00011)",
         "description": "",
@@ -2753,7 +2901,7 @@
           },
           {
             "result": {
-              "duration": 15000000,
+              "duration": 13000000,
               "status": "passed"
             },
             "line": 14,
@@ -2782,7 +2930,7 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "line": 17,
@@ -2804,7 +2952,7 @@
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 13000000,
               "status": "passed"
             },
             "line": 18,
@@ -2825,7 +2973,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:33.804Z",
+        "start_timestamp": "2021-01-23T00:56:56.694Z",
         "line": 44,
         "name": "优路企业收入确认统计 (IR00011)",
         "description": "",
@@ -2835,6 +2983,7 @@
         "steps": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 27,
@@ -2852,6 +3001,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 28,
@@ -2867,7 +3017,7 @@
           },
           {
             "result": {
-              "duration": 18000000,
+              "duration": 61000000,
               "status": "passed"
             },
             "line": 36,
@@ -2896,7 +3046,7 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 12000000,
               "status": "passed"
             },
             "line": 39,
@@ -2918,7 +3068,7 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 11000000,
               "status": "passed"
             },
             "line": 40,
@@ -2950,7 +3100,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:33.846Z",
+        "start_timestamp": "2021-01-23T00:56:56.787Z",
         "line": 22,
         "name": "企业收入确认子订单列表 (IR00012)",
         "description": "",
@@ -2977,7 +3127,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -2993,7 +3142,7 @@
           },
           {
             "result": {
-              "duration": 98000000,
+              "duration": 100000000,
               "status": "passed"
             },
             "line": 14,
@@ -3005,6 +3154,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 15,
@@ -3022,7 +3172,7 @@
           },
           {
             "result": {
-              "duration": 11000000,
+              "duration": 25000000,
               "status": "passed"
             },
             "line": 17,
@@ -3044,7 +3194,7 @@
           },
           {
             "result": {
-              "duration": 12000000,
+              "duration": 20000000,
               "status": "passed"
             },
             "line": 18,
@@ -3065,7 +3215,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:33.995Z",
+        "start_timestamp": "2021-01-23T00:56:56.954Z",
         "line": 44,
         "name": "企业收入确认子订单列表 (IR00012)",
         "description": "",
@@ -3075,6 +3225,7 @@
         "steps": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 27,
@@ -3107,7 +3258,7 @@
           },
           {
             "result": {
-              "duration": 97000000,
+              "duration": 100000000,
               "status": "passed"
             },
             "line": 36,
@@ -3136,7 +3287,7 @@
           },
           {
             "result": {
-              "duration": 7000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 39,
@@ -3158,7 +3309,7 @@
           },
           {
             "result": {
-              "duration": 12000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 40,
@@ -3190,7 +3341,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:34.117Z",
+        "start_timestamp": "2021-01-23T00:56:57.078Z",
         "line": 21,
         "name": "收入确认税率表添加 (IR00013)",
         "description": "",
@@ -3217,7 +3368,7 @@
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -3233,7 +3384,7 @@
           },
           {
             "result": {
-              "duration": 22000000,
+              "duration": 11000000,
               "status": "passed"
             },
             "line": 13,
@@ -3262,7 +3413,7 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 10000000,
               "status": "passed"
             },
             "line": 16,
@@ -3316,7 +3467,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:34.175Z",
+        "start_timestamp": "2021-01-23T00:56:57.119Z",
         "line": 22,
         "name": "个人税金统计 (IR00014)",
         "description": "",
@@ -3370,6 +3521,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 15,
@@ -3387,248 +3539,7 @@
           },
           {
             "result": {
-              "duration": 20000000,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "result",
-                  "offset": 17
-                },
-                {
-                  "val": "000000",
-                  "offset": 33
-                }
-              ],
-              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 10000000,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "JSONPATH_GET_MONGO",
-            "match": {
-              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "data",
-                  "userAgent"
-                ]
-              }
-            ],
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-01-21T09:32:34.592Z",
-        "line": 44,
-        "name": "个人税金统计 (IR00014)",
-        "description": "",
-        "id": "收入确认-ir-(ir00014);个人税金统计-(ir00014);;2",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "API \"/api/ir/item/view/taxstat\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "/api/ir/item/view/taxstat",
-                  "offset": 5
-                }
-              ],
-              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "line": 28,
-            "name": "Param",
-            "match": {
-              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
-            },
-            "keyword": "And ",
-            "doc_string": {
-              "line": 29,
-              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart: sss\n   itemdtlAimdateend: sss"
-            }
-          },
-          {
-            "result": {
-              "duration": 14000000,
-              "status": "passed"
-            },
-            "line": 36,
-            "name": "GET",
-            "match": {
-              "location": "com.youlu.api.CommonStepDefinitions.get()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 37,
-            "name": "STATUS \"200\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 8
-                }
-              ],
-              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "line": 39,
-            "name": "JSONPATH_ASSERT \"result\" equals \"GB1001\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "result",
-                  "offset": 17
-                },
-                {
-                  "val": "GB1001",
-                  "offset": 33
-                }
-              ],
-              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "JSONPATH_GET_MONGO",
-            "match": {
-              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "data",
-                  "userAgent"
-                ]
-              }
-            ],
-            "keyword": "Then "
-          }
-        ]
-      }
-    ],
-    "name": "收入确认-IR (IR00014)",
-    "description": "",
-    "id": "收入确认-ir-(ir00014)",
-    "keyword": "Feature",
-    "uri": "classpath:features/A_1_1IR00014%E4%B8%AA%E4%BA%BA%E7%A8%8E%E9%87%91%E7%BB%9F%E8%AE%A1.feature",
-    "tags": []
-  },
-  {
-    "line": 1,
-    "elements": [
-      {
-        "start_timestamp": "2021-01-21T09:32:34.626Z",
-        "line": 22,
-        "name": "企业税金统计 (IR00015)",
-        "description": "",
-        "id": "收入确认-ir-(ir00015);企业税金统计-(ir00015);;2",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "API \"/api/ir/org/item/view/taxstat\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "/api/ir/org/item/view/taxstat",
-                  "offset": 5
-                }
-              ],
-              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "Param",
-            "match": {
-              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
-            },
-            "keyword": "And ",
-            "doc_string": {
-              "line": 7,
-              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart:\n   itemdtlAimdateend:"
-            }
-          },
-          {
-            "result": {
-              "duration": 75000000,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "GET",
-            "match": {
-              "location": "com.youlu.api.CommonStepDefinitions.get()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "STATUS \"200\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 8
-                }
-              ],
-              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 6000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 17,
@@ -3671,7 +3582,249 @@
         ]
       },
       {
-        "start_timestamp": "2021-01-21T09:32:34.728Z",
+        "start_timestamp": "2021-01-23T00:56:57.530Z",
+        "line": 44,
+        "name": "个人税金统计 (IR00014)",
+        "description": "",
+        "id": "收入确认-ir-(ir00014);个人税金统计-(ir00014);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "API \"/api/ir/item/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 29,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart: sss\n   itemdtlAimdateend: sss"
+            }
+          },
+          {
+            "result": {
+              "duration": 21000000,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "JSONPATH_ASSERT \"result\" equals \"GB1001\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "GB1001",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14000000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00014)",
+    "description": "",
+    "id": "收入确认-ir-(ir00014)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00014%E4%B8%AA%E4%BA%BA%E7%A8%8E%E9%87%91%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-23T00:56:57.584Z",
+        "line": 22,
+        "name": "企业税金统计 (IR00015)",
+        "description": "",
+        "id": "收入确认-ir-(ir00015);企业税金统计-(ir00015);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/org/item/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/org/item/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart:\n   itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 86000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "JSONPATH_GET_MONGO",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathGet(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "data",
+                  "userAgent"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-23T00:56:57.706Z",
         "line": 43,
         "name": "企业税金统计 (IR00015)",
         "description": "",
@@ -3698,6 +3851,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 27,
@@ -3713,7 +3867,7 @@
           },
           {
             "result": {
-              "duration": 16000000,
+              "duration": 22000000,
               "status": "passed"
             },
             "line": 35,
@@ -3742,7 +3896,7 @@
           },
           {
             "result": {
-              "duration": 11000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 38,
@@ -3796,7 +3950,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:34.766Z",
+        "start_timestamp": "2021-01-23T00:56:57.750Z",
         "line": 30,
         "name": "合作商收入确认列表 (IR00016)",
         "description": "",
@@ -3806,7 +3960,6 @@
         "steps": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -3839,7 +3992,7 @@
           },
           {
             "result": {
-              "duration": 186000000,
+              "duration": 363000000,
               "status": "passed"
             },
             "line": 22,
@@ -3868,7 +4021,7 @@
           },
           {
             "result": {
-              "duration": 25000000,
+              "duration": 17000000,
               "status": "passed"
             },
             "line": 25,
@@ -3890,7 +4043,7 @@
           },
           {
             "result": {
-              "duration": 17000000,
+              "duration": 15000000,
               "status": "passed"
             },
             "line": 26,
@@ -3922,7 +4075,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:35.009Z",
+        "start_timestamp": "2021-01-23T00:56:58.153Z",
         "line": 22,
         "name": "合作商收入确认统计 (IR00017)",
         "description": "",
@@ -3932,7 +4085,6 @@
         "steps": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -3950,6 +4102,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -3965,7 +4118,7 @@
           },
           {
             "result": {
-              "duration": 89000000,
+              "duration": 79000000,
               "status": "passed"
             },
             "line": 14,
@@ -4016,7 +4169,7 @@
           },
           {
             "result": {
-              "duration": 8000000,
+              "duration": 10000000,
               "status": "passed"
             },
             "line": 18,
@@ -4048,7 +4201,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:35.121Z",
+        "start_timestamp": "2021-01-23T00:56:58.256Z",
         "line": 18,
         "name": "合作商收入确认详情 (IR00018)",
         "description": "",
@@ -4075,6 +4228,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -4090,7 +4244,7 @@
           },
           {
             "result": {
-              "duration": 206000000,
+              "duration": 139000000,
               "status": "passed"
             },
             "line": 10,
@@ -4102,7 +4256,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 11,
@@ -4120,7 +4273,7 @@
           },
           {
             "result": {
-              "duration": 23000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 13,
@@ -4142,7 +4295,7 @@
           },
           {
             "result": {
-              "duration": 14000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 14,
@@ -4174,7 +4327,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:35.375Z",
+        "start_timestamp": "2021-01-23T00:56:58.418Z",
         "line": 27,
         "name": "环球收入确认列表 (IR00019)",
         "description": "",
@@ -4184,7 +4337,6 @@
         "steps": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -4218,7 +4370,7 @@
           },
           {
             "result": {
-              "duration": 150000000,
+              "duration": 540000000,
               "status": "passed"
             },
             "line": 19,
@@ -4247,7 +4399,7 @@
           },
           {
             "result": {
-              "duration": 33000000,
+              "duration": 32000000,
               "status": "passed"
             },
             "line": 22,
@@ -4269,7 +4421,7 @@
           },
           {
             "result": {
-              "duration": 31000000,
+              "duration": 50000000,
               "status": "passed"
             },
             "line": 23,
@@ -4281,7 +4433,7 @@
               {
                 "cells": [
                   "data.data.itemId[0]",
-                  "itemId"
+                  "itemId2"
                 ]
               }
             ],
@@ -4301,7 +4453,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:35.598Z",
+        "start_timestamp": "2021-01-23T00:56:59.047Z",
         "line": 20,
         "name": "环球学员收入确认详情 (IR00020)",
         "description": "",
@@ -4328,7 +4480,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -4339,12 +4490,12 @@
             "keyword": "And ",
             "doc_string": {
               "line": 7,
-              "value": "     itemId: ${itemId}\n     startDate:\n     endDate:"
+              "value": "     itemId: ${itemId2}\n     startDate:\n     endDate:"
             }
           },
           {
             "result": {
-              "duration": 247000000,
+              "duration": 308000000,
               "status": "passed"
             },
             "line": 12,
@@ -4373,7 +4524,7 @@
           },
           {
             "result": {
-              "duration": 35000000,
+              "duration": 16000000,
               "status": "passed"
             },
             "line": 15,
@@ -4395,7 +4546,7 @@
           },
           {
             "result": {
-              "duration": 28000000,
+              "duration": 12000000,
               "status": "passed"
             },
             "line": 16,
@@ -4427,7 +4578,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:35.937Z",
+        "start_timestamp": "2021-01-23T00:56:59.391Z",
         "line": 24,
         "name": "环球学员收入确认统计 (IR00021)",
         "description": "",
@@ -4454,7 +4605,7 @@
           },
           {
             "result": {
-              "duration": 3000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -4470,7 +4621,7 @@
           },
           {
             "result": {
-              "duration": 150000000,
+              "duration": 176000000,
               "status": "passed"
             },
             "line": 16,
@@ -4482,6 +4633,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 17,
@@ -4499,7 +4651,7 @@
           },
           {
             "result": {
-              "duration": 30000000,
+              "duration": 24000000,
               "status": "passed"
             },
             "line": 19,
@@ -4521,7 +4673,7 @@
           },
           {
             "result": {
-              "duration": 12000000,
+              "duration": 14000000,
               "status": "passed"
             },
             "line": 20,
@@ -4553,7 +4705,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:36.143Z",
+        "start_timestamp": "2021-01-23T00:56:59.616Z",
         "line": 26,
         "name": "锅巴学员收入确认列表 (IR00022)",
         "description": "",
@@ -4580,6 +4732,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -4595,7 +4748,7 @@
           },
           {
             "result": {
-              "duration": 213000000,
+              "duration": 574000000,
               "status": "passed"
             },
             "line": 18,
@@ -4624,7 +4777,7 @@
           },
           {
             "result": {
-              "duration": 24000000,
+              "duration": 29000000,
               "status": "passed"
             },
             "line": 21,
@@ -4646,7 +4799,7 @@
           },
           {
             "result": {
-              "duration": 27000000,
+              "duration": 17000000,
               "status": "passed"
             },
             "line": 22,
@@ -4678,7 +4831,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:36.417Z",
+        "start_timestamp": "2021-01-23T00:57:00.246Z",
         "line": 19,
         "name": "锅巴学员收入确认详情 (IR00023)",
         "description": "",
@@ -4688,6 +4841,7 @@
         "steps": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -4721,7 +4875,7 @@
           },
           {
             "result": {
-              "duration": 238000000,
+              "duration": 301000000,
               "status": "passed"
             },
             "line": 12,
@@ -4750,7 +4904,7 @@
           },
           {
             "result": {
-              "duration": 9000000,
+              "duration": 12000000,
               "status": "passed"
             },
             "line": 15,
@@ -4784,7 +4938,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:36.674Z",
+        "start_timestamp": "2021-01-23T00:57:00.568Z",
         "line": 24,
         "name": "锅巴学员收入确认统计 (IR00024)",
         "description": "",
@@ -4826,7 +4980,7 @@
           },
           {
             "result": {
-              "duration": 127000000,
+              "duration": 180000000,
               "status": "passed"
             },
             "line": 16,
@@ -4855,7 +5009,7 @@
           },
           {
             "result": {
-              "duration": 8000000,
+              "duration": 7000000,
               "status": "passed"
             },
             "line": 19,
@@ -4877,7 +5031,7 @@
           },
           {
             "result": {
-              "duration": 10000000,
+              "duration": 8000000,
               "status": "passed"
             },
             "line": 20,
@@ -4909,7 +5063,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:36.826Z",
+        "start_timestamp": "2021-01-23T00:57:00.775Z",
         "line": 17,
         "name": "锅巴学员引流订单详情 (IR00025)",
         "description": "",
@@ -4937,6 +5091,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -4952,7 +5107,7 @@
           },
           {
             "result": {
-              "duration": 73000000,
+              "duration": 96000000,
               "status": "passed"
             },
             "line": 10,
@@ -4981,7 +5136,7 @@
           },
           {
             "result": {
-              "duration": 8000000,
+              "duration": 9000000,
               "status": "passed"
             },
             "line": 13,
@@ -5015,7 +5170,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:36.910Z",
+        "start_timestamp": "2021-01-23T00:57:00.886Z",
         "line": 22,
         "name": "小微学员收入确认列表 (IR00026)",
         "description": "",
@@ -5025,6 +5180,7 @@
         "steps": [
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -5057,7 +5213,7 @@
           },
           {
             "result": {
-              "duration": 1438000000,
+              "duration": 1716000000,
               "status": "passed"
             },
             "line": 14,
@@ -5086,7 +5242,7 @@
           },
           {
             "result": {
-              "duration": 16000000,
+              "duration": 28000000,
               "status": "passed"
             },
             "line": 17,
@@ -5108,7 +5264,7 @@
           },
           {
             "result": {
-              "duration": 17000000,
+              "duration": 18000000,
               "status": "passed"
             },
             "line": 18,
@@ -5140,7 +5296,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:38.388Z",
+        "start_timestamp": "2021-01-23T00:57:02.653Z",
         "line": 17,
         "name": "小微学员收入确认详情 (IR00027)",
         "description": "",
@@ -5150,7 +5306,6 @@
         "steps": [
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 5,
@@ -5183,7 +5338,7 @@
           },
           {
             "result": {
-              "duration": 353000000,
+              "duration": 333000000,
               "status": "passed"
             },
             "line": 10,
@@ -5195,6 +5350,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 11,
@@ -5212,7 +5368,7 @@
           },
           {
             "result": {
-              "duration": 15000000,
+              "duration": 29000000,
               "status": "passed"
             },
             "line": 13,
@@ -5246,7 +5402,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:38.764Z",
+        "start_timestamp": "2021-01-23T00:57:03.021Z",
         "line": 18,
         "name": "小微统计 (IR00028)",
         "description": "",
@@ -5289,7 +5445,7 @@
           },
           {
             "result": {
-              "duration": 80000000,
+              "duration": 79000000,
               "status": "passed"
             },
             "line": 11,
@@ -5301,6 +5457,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 12,
@@ -5318,7 +5475,7 @@
           },
           {
             "result": {
-              "duration": 11000000,
+              "duration": 21000000,
               "status": "passed"
             },
             "line": 14,
@@ -5352,7 +5509,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:38.861Z",
+        "start_timestamp": "2021-01-23T00:57:03.133Z",
         "line": 21,
         "name": "合作商税金统计 (IR00029)",
         "description": "",
@@ -5379,7 +5536,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -5395,7 +5551,7 @@
           },
           {
             "result": {
-              "duration": 153000000,
+              "duration": 553000000,
               "status": "passed"
             },
             "line": 14,
@@ -5424,7 +5580,7 @@
           },
           {
             "result": {
-              "duration": 27000000,
+              "duration": 21000000,
               "status": "passed"
             },
             "line": 17,
@@ -5458,7 +5614,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-21T09:32:39.049Z",
+        "start_timestamp": "2021-01-23T00:57:03.716Z",
         "line": 18,
         "name": "小微税金统计 (IR00030)",
         "description": "",
@@ -5485,6 +5641,7 @@
           },
           {
             "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 6,
@@ -5500,7 +5657,7 @@
           },
           {
             "result": {
-              "duration": 177000000,
+              "duration": 552000000,
               "status": "passed"
             },
             "line": 11,
@@ -5529,7 +5686,7 @@
           },
           {
             "result": {
-              "duration": 26000000,
+              "duration": 24000000,
               "status": "passed"
             },
             "line": 14,
@@ -5557,6 +5714,430 @@
     "id": "收入确认-ir-(ir00030)",
     "keyword": "Feature",
     "uri": "classpath:features/A_1_1IR00030%E5%B0%8F%E5%BE%AE%E7%A8%8E%E9%87%91%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-23T00:57:04.304Z",
+        "line": 17,
+        "name": "引流订单详情 (IR00031)",
+        "description": "",
+        "id": "收入确认-ir-(ir00031);引流订单详情-(ir00031);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/item/view/trgivinfo\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/item/view/trgivinfo",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "    itemId: ${itemId1}"
+            }
+          },
+          {
+            "result": {
+              "duration": 82000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00031)",
+    "description": "",
+    "id": "收入确认-ir-(ir00031)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00031%E5%BC%95%E6%B5%81%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-23T00:57:04.405Z",
+        "line": 21,
+        "name": "环球学员税金统计 (IR00032)",
+        "description": "",
+        "id": "收入确认-ir-(ir00032);环球学员税金统计-(ir00032);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/hq/item/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/hq/item/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "   projectId:\n   schoolId:\n   orderType:\n   itemdtlAimdatestart:\n   itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 105000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00032)",
+    "description": "",
+    "id": "收入确认-ir-(ir00032)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00032%E7%8E%AF%E7%90%83%E5%AD%A6%E5%91%98%E7%A8%8E%E9%87%91%E7%BB%9F%E8%AE%A1.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-23T00:57:04.524Z",
+        "line": 17,
+        "name": "环球学员引流订单详情 (IR00033)",
+        "description": "",
+        "id": "收入确认-ir-(ir00033);环球学员引流订单详情-(ir00033);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/hq/item/view/trgivinfo\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/hq/item/view/trgivinfo",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "    itemId: ${itemId2}"
+            }
+          },
+          {
+            "result": {
+              "duration": 81000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00033)",
+    "description": "",
+    "id": "收入确认-ir-(ir00033)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00033%E7%8E%AF%E7%90%83%E5%AD%A6%E5%91%98%E5%BC%95%E6%B5%81%E8%AE%A2%E5%8D%95%E8%AF%A6%E6%83%85.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-23T00:57:04.621Z",
+        "line": 21,
+        "name": "锅巴学员税金统计 (IR00034)",
+        "description": "",
+        "id": "收入确认-ir-(ir00034);锅巴学员税金统计-(ir00034);;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "API \"/api/ir/gb/item/view/taxstat\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/ir/gb/item/view/taxstat",
+                  "offset": 5
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.api(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Param",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.paramsYaml(java.lang.String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "line": 7,
+              "value": "      projectId:\n      schoolId:\n      orderType:\n      itemdtlAimdatestart:\n      itemdtlAimdateend:"
+            }
+          },
+          {
+            "result": {
+              "duration": 87000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "GET",
+            "match": {
+              "location": "com.youlu.api.CommonStepDefinitions.get()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "STATUS \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 8
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "JSONPATH_ASSERT \"result\" equals \"000000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "result",
+                  "offset": 17
+                },
+                {
+                  "val": "000000",
+                  "offset": 33
+                }
+              ],
+              "location": "com.youlu.api.CommonStepDefinitions.jsonPathAssert(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "收入确认-IR (IR00034)",
+    "description": "",
+    "id": "收入确认-ir-(ir00034)",
+    "keyword": "Feature",
+    "uri": "classpath:features/A_1_1IR00034%E9%94%85%E5%B7%B4%E5%AD%A6%E5%91%98%E7%A8%8E%E9%87%91%E7%BB%9F%E8%AE%A1.feature",
     "tags": []
   }
 ]

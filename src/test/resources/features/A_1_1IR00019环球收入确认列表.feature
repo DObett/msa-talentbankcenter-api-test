@@ -21,7 +21,7 @@ Feature: 收入确认-IR (IR00019)
 
     Then JSONPATH_ASSERT "<JsonResult>" equals "<value>"
     Then JSONPATH_GET_MONGO
-      | data.data.itemId[0]| itemId |
+      | data.data.itemId[0]| itemId2 |
     Examples:
       | JsonResult  |   value |
       |  result     | 000000 |
